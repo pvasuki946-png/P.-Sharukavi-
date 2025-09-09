@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My Resume (JavaScript)</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 40px;
+      background-color: #f9f9f9;
+    }
+    .container {
+      max-width: 700px;
+      margin: auto;
+      background: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+    }
+    h1, h2 {
+      color: #2c3e50;
+    }
+    ul {
+      list-style-type: square;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container" id="resume">
+    <!-- Resume will be created by JavaScript -->
+  </div>
+
+  <script>
+    // Resume Data (You can change this to your own details)
+    const resume = {
+      name: "P. Sharukavi",
+      email: "pvasuki946@gmail.com",
+      phone: "+91-9042368487",
+      education: [
+        "B.Sc Computer Science - XYZ College (2021 - 2024)",
+        "HSC - ABC School (2019 - 2021)",
+        "SSLC - ABC School (2018 - 2019)"
+      ],
+      skills: ["HTML", "CSS", "JavaScript", "Python", "MySQL"],
+      projects: [
+        "Portfolio Website (HTML, CSS, JS)",
+        "Student Management System (Python + MySQL)"
+      ],
+      experience: "Internship at XYZ Company - Web Development (2 Months)"
+    };
+
+    // Get container
+    const container = document.getElementById("resume");
+
+    // Create Resume Layout
+    container.innerHTML = `
+      <h1>${resume.name}</h1>
+      <p><b>Email:</b> ${resume.email} | <b>Phone:</b> ${resume.phone}</p>
+
+      <h2>Education</h2>
+      <ul>${resume.education.map(e => `<li>${e}</li>`).join("")}</ul>
+
+      <h2>Skills</h2>
+      <ul>${resume.skills.map(s => `<li>${s}</li>`).join("")}</ul>
+
+      <h2>Projects</h2>
+      <ul>${resume.projects.map(p => `<li>${p}</li>`).join("")}</ul>
+
+      <h2>Experience</h2>
+      <p>${resume.experience}</p>
+    `;
+  </script>
+
+</body>
+</html>
