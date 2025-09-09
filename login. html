@@ -1,0 +1,19 @@
+document.getElementById('loginForm').addEventListener('submit', function(e) {
+    e.preventDefault(); // Prevent form from submitting the default way
+
+    const username = document.getElementById('username').value;
+    const password = document.getElementById('password').value;
+    const errorMessage = document.getElementById('error-message');
+
+    // Hardcoded username and password for demo
+    const validUsername = 'userP.Sharukavi ';
+    const validPassword = 'password220904';
+
+    // Check if entered username and password match
+    if (username === validUsername && password === validPassword) {
+        alert('Login Successful!');
+        window.location.href = 'welcome.html'; // Redirect to a new page after successful login
+    } else {
+        errorMessage.textContent = 'Invalid username or password. Please try again.';
+    }
+});
